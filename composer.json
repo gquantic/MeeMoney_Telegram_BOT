@@ -6,7 +6,11 @@
             "email": "gapurovich05@mail.ru"
         }
     ],
-    "require": {},
+    "require": {
+      "ext-json": "*",
+        "ext-curl": "*",
+        "ext-mysqli": "*"
+    },
     "autoload": {
         "psr-4": {
             "Libs\\": "libs/"
