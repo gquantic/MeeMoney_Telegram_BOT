@@ -12,8 +12,10 @@ trait Messages
     /**
      * @param string $message - сообщение
      */
-    public static function getAnswer($message)
+    public static function getAnswer($id, $name, $message)
     {
+        self::$idToSend = $id;
+
         $collection = json_decode(self::getCollection(), true);
         var_dump($collection);
 
@@ -32,7 +34,7 @@ trait Messages
     private static function send($message)
     {
         Telegram::init('sendMessage', [
-            'chat_id' => 2057626684,
+            'chat_id' => self::$idToSend,
             'text' => $message
         ]);
     }

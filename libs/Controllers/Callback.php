@@ -23,6 +23,7 @@ class Callback
      * @var string
      */
     protected static $message;
+    protected static $idToSend;
 
     /**
      * @param string $name - Имя собеседника
@@ -41,6 +42,6 @@ class Callback
      */
     public static function init()
     {
-        Messages::getAnswer(self::$message);
+        Messages::getAnswer(self::$id, self::$name, self::$message);
     }
 }

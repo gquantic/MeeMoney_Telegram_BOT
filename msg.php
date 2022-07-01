@@ -19,6 +19,6 @@ $data = $data['callback_query']  ? $data['callback_query'] : $data['message'];
 # Записываем сообщение в нижнем регистре
 $message = strtolower(($data['text'] ? $data['text'] : $data['data']));
 
-//$callback = new Callback('', '', $message);
+$callback = new Callback($data['from']['id'], $data['from']['first_name'], $message);
 
-//$callback::init();
+$callback::init();
