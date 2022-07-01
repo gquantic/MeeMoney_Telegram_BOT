@@ -14,8 +14,6 @@ trait Messages
      */
     public static function getAnswer($id, $name, $message)
     {
-        self::$idToSend = $id;
-
         $collection = json_decode(self::getCollection(), true);
         var_dump($collection);
 
@@ -25,16 +23,16 @@ trait Messages
             $queryFetched = mysqli_fetch_assoc($query);
             var_dump($queryFetched);
 
-            self::send($queryFetched['answer']);
+            self::send($id, $queryFetched['answer']);
         } else {
-            self::send("Я тебя не понял :(");
+            self::send($id, "Я тебя не понял :(");
         }
     }
 
-    private static function send($message)
+    private static function send($id, $message)
     {
         Telegram::init('sendMessage', [
-            'chat_id' => self::$idToSend,
+            'chat_id' => $id,
             'text' => $message
         ]);
     }
