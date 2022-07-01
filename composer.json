@@ -1,0 +1,15 @@
+{
+    "name": "meemoney_bot/public_html",
+    "authors": [
+        {
+            "name": "Murad Magomedov",
+            "email": "gapurovich05@mail.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Libs\\": "libs/"
+        }
+    }
+}

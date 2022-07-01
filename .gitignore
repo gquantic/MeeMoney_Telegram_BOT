@@ -1,0 +1,7 @@
+vendor/
+.composer/
+.idea/
+.subversion/
+.cache/
+config.php
+msg.txt
